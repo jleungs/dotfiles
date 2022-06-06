@@ -8,7 +8,7 @@ let g:mapleader = "\<Space>"
 " curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " :CocInstall coc-python, coc-pairs
+    " Install node: curl -sL install-node.vercel.app/lts | bash
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " theme
