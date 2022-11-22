@@ -30,7 +30,6 @@ static const Rule rules[] = {
 	/* class            instance    title       tags mask     isfloating   monitor */
 	{ "st-256color",     NULL,       NULL,       1 << 0,            0,           -1 },
 	{ "firefox",         NULL,       NULL,       1 << 1,            0,           -1 },
-	{ "Spotify",         NULL,       NULL,       1 << 0,            0,           0 },
 };
 
 /* layout(s) */
@@ -109,6 +108,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
     /* Custom */
     { MODKEY|ShiftMask,	  XK_l,			            spawn,          {.v = lockcmd} },
+    { MODKEY,	          XK_Insert,			    spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn Terminus:size=10 -i -l 50 | cut -d' ' -f1)") },
+    /* Audio & Brightness */
     { 0,                  XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
     { 0,                  XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },
     { 0,                  XF86XK_AudioMute,         spawn,          {.v = volmute } },
