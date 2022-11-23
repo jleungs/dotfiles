@@ -8,6 +8,9 @@ becho() {
 }
 
 bstatus() {
+    # CPU
+    becho "CPU $(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)"
+
 	# WIRELESS
 	becho "$(iw dev | grep ssid | cut -d " " -f2-)"
 
@@ -15,14 +18,14 @@ bstatus() {
 	if amixer get Master | grep -Fq off; then
 		becho "MUTED"
 	else
-		becho "VOL $(amixer get Master | awk '$0~/%/{print $4;exit}' | tr -d '[]')"
+		becho "VOL $(amixer get Master | awk '$0~/%/{print $5;exit}' | tr -d '[]')"
 	fi
 
 	# BATTERY
-	if [ -f /sys/class/power_supply/BAT0/capacity ]; then
+	if [ -f /sys/class/power_supply/BAT1/capacity ]; then
 		bat="BAT"
 
-		if grep -Fq "Charging" /sys/class/power_supply/BAT0/status; then
+		if grep -Fq "Charging" /sys/class/power_supply/BAT1/status; then
 			bat+="+"
 		fi
 
