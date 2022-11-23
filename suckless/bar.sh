@@ -43,7 +43,7 @@ bstatus() {
 
 main() {
 	while true; do
-		xsetroot -name "$(bstatus)      " &
+		xsetroot -name "$(bstatus)" &
 		sleep 1
 		wait
 	done
