@@ -11,8 +11,6 @@ call plug#begin()
     " Install node: curl -sL install-node.vercel.app/lts | bash
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " theme
-    Plug 'morhetz/gruvbox'
 call plug#end()
 """ PLUGINS CONFIG
 " --------------------------------------------------------------------------------
@@ -55,7 +53,6 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set mouse=a
 set number relativenumber
 set ignorecase " ignore case when searching
-color gruvbox
 " keep selected after changing indent
 vnoremap > >gv
 vnoremap < <gv
