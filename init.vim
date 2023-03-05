@@ -75,4 +75,4 @@ hi cursorline cterm=none term=none
 highlight CursorLine guibg=#303000 ctermbg=234
 
 " fix spellcheck in .tex
-syntax spell toplevel
+autocmd VimEnter * syntax spell toplevel
