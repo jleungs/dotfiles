@@ -73,3 +73,6 @@ nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
 set cursorline
 hi cursorline cterm=none term=none
 highlight CursorLine guibg=#303000 ctermbg=234
+
+" fix spellcheck in .tex
+syntax spell toplevel
