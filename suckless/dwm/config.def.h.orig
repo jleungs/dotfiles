@@ -1,4 +1,3 @@
-#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -11,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus:size=10" };
-static const char dmenufont[]       = "Terminus:size=10";
+static const char *fonts[]          = { "monospace:size=10" };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -32,9 +31,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class            instance    title       tags mask     isfloating   monitor */
-    { "st-256color",     NULL,       NULL,       1 << 0,        0,          0 },
-    { "firefox",         NULL,       NULL,       1 << 1,        0,          0 },
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -45,8 +44,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[T]",      tile },    /* first entry is default */
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },    /* first entry is default */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -64,21 +63,6 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *lockcmd[] = { "slock", NULL };
-/* scratchpad */
-static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-/* Media keys */
-static const char *volup[]    = { "amixer", "-q", "sset", "Master", "5%+", "unmute", NULL  };
-static const char *voldown[]  = { "amixer", "-q", "sset", "Master", "5%-", "unmute", NULL  };
-static const char *volmute[]  = { "amixer", "-q", "sset", "Master", "toggle", NULL  };
-static const char *play[]     = { "playerctl", "play-pause", NULL  };
-static const char *next[]     = { "playerctl", "next",   NULL  };
-static const char *prev[]     = { "playerctl", "previous",   NULL  };
-static const char *stop[]     = { "playerctl", "pause",   NULL  };
-static const char *lightinc[] = { "light", "-A", "10"  };
-static const char *lightdec[] = { "light", "-U", "10" };
-
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -115,22 +99,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-        /* Custom, extended */
-    { MODKEY|ShiftMask,   XK_l,                     spawn,          {.v = lockcmd} },
-    { MODKEY,             XK_Insert,                spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn Terminus:size=10 -i -l 50 | cut -d' ' -f1)") },
-    { MODKEY|ShiftMask,   XK_BackSpace,             togglescratch,  {.v = scratchpadcmd } },
-        /* Audio & Brightness */
-    { 0,                  XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
-    { 0,                  XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },
-    { 0,                  XF86XK_AudioMute,         spawn,          {.v = volmute } },
-    { 0,                  XF86XK_AudioPlay,         spawn,          {.v = play } },
-    { 0,                  XF86XK_AudioNext,         spawn,          {.v = next } },
-    { 0,                  XF86XK_AudioPrev,         spawn,          {.v = prev } },
-    { 0,                  XF86XK_AudioStop,         spawn,          {.v = stop } },
-    { 0,                  XF86XK_MonBrightnessDown, spawn,          {.v = lightdec } },
-    { 0,                  XF86XK_MonBrightnessUp,   spawn,          {.v = lightinc } },
-
-
 };
 
 /* button definitions */

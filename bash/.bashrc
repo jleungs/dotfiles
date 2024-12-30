@@ -8,7 +8,16 @@ HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# autcompletion
+complete -cf sudo
+source /usr/share/git/completion/git-completion.bash
+
+export EDITOR=nvim
+
 # Aliases
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias v='nvim'
+alias gpunvidia='prime-offload && optimus-manager --switch nvidia'
+
