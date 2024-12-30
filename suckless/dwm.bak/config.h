@@ -65,9 +65,6 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[] = { "slock", NULL };
-/* scratchpad */
-static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 /* Media keys */
 static const char *volup[]    = { "amixer", "-q", "sset", "Master", "5%+", "unmute", NULL  };
 static const char *voldown[]  = { "amixer", "-q", "sset", "Master", "5%-", "unmute", NULL  };
@@ -76,8 +73,8 @@ static const char *play[]     = { "playerctl", "play-pause", NULL  };
 static const char *next[]     = { "playerctl", "next",   NULL  };
 static const char *prev[]     = { "playerctl", "previous",   NULL  };
 static const char *stop[]     = { "playerctl", "pause",   NULL  };
-static const char *lightinc[] = { "light", "-A", "10"  };
-static const char *lightdec[] = { "light", "-U", "10" };
+static const char *lightinc[] = { "xbacklight", "-inc", "10"  };
+static const char *lightdec[] = { "xbacklight", "-dec", "10" };
 
 
 static const Key keys[] = {
@@ -118,7 +115,6 @@ static const Key keys[] = {
         /* Custom, extended */
     { MODKEY|ShiftMask,   XK_l,                     spawn,          {.v = lockcmd} },
     { MODKEY,             XK_Insert,                spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn Terminus:size=10 -i -l 50 | cut -d' ' -f1)") },
-    { MODKEY|ShiftMask,   XK_BackSpace,             togglescratch,  {.v = scratchpadcmd } },
         /* Audio & Brightness */
     { 0,                  XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
     { 0,                  XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },
