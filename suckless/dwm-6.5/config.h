@@ -11,8 +11,10 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus:size=10" };
-static const char dmenufont[]       = "Terminus:size=10";
+//static const char *fonts[]          = { "TempleOS:size=9" };
+static const char *fonts[]          = { "TempleOS:pixelsize=12:antialias=true:autohint=true" };
+//static const char dmenufont[]       = "TempleOS:size=9";
+static const char dmenufont[]       = "TempleOS:pixelsize=12:antialias=true:autohint=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
