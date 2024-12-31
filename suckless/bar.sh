@@ -9,10 +9,13 @@ becho() {
 
 bstatus() {
     # CPU
-    becho "CPU $(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)"
+    #becho "CPU $(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)"
 
 	# WIRELESS
-	becho "$(iw dev | grep ssid | cut -d " " -f2-)"
+	#becho "$(nmcli -t -f active,ssid dev wifi | grep ^yes | cut -d: -f2-)"
+
+    # BACKLIGHT
+    becho "BRI $(light | xargs printf '%.0f')"
 
 	# VOLUME
 	if amixer get Master | grep -Fq off; then
@@ -38,7 +41,7 @@ bstatus() {
 	fi
 
 	# DATE
-	becho "$(date +"%a %F • %R")"
+	becho "$(date +"%a %F %R")"
 }
 
 main() {
