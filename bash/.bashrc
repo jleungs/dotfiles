@@ -18,6 +18,9 @@ export EDITOR=nvim
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
 alias v='nvim'
+alias c='xclip -selection clipboard'
+
 alias gpunvidia='prime-offload && optimus-manager --switch nvidia'
 

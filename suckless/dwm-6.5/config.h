@@ -118,7 +118,7 @@ static const Key keys[] = {
 	TAGKEYS(                    XK_9,                           8)
 	{ MODKEY|ShiftMask,         XK_q,           quit,           {0} },
     { MODKEY|ShiftMask,         XK_l,           spawn,          {.v = lockcmd} },
-    { MODKEY,                   XK_Insert,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn Terminus:size=10 -i -l 50 | cut -d' ' -f1)") },
+    { MODKEY,                   XK_Insert,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn TempleOS:pixelsize=12 -i -l 50 | cut -d' ' -f1)") },
     /* Audio & Brightness */
     { 0,    XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
     { 0,    XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },
