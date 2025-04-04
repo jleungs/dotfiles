@@ -77,5 +77,5 @@ augroup END
 set cursorline
 
 set spelllang=en_gb
-colorscheme vim
+colorscheme default
 

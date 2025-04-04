@@ -5,6 +5,4 @@ Setup
 * Terminal emulator: st
 * Window manager: dwm
 * Shell: bash
-* Browser: firefox
 
-move font to `~/.local/share/fonts`
