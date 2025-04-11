@@ -11,8 +11,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Liberation Mono:pixelsize=19:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Liberation Mono:pixelsize=19:antialias=true:autohint=true";
+static const char *fonts[]          = { "Modern DOS 8x16:pixelsize=23:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Modern DOS 8x16:pixelsize=23:antialias=true:autohint=true";
 static const char col_gray1[]       = "#1c1c1c";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -116,7 +116,7 @@ static const Key keys[] = {
 	//TAGKEYS(                    XK_9,                           8)
 	{ MODKEY|ShiftMask,         XK_q,           quit,           {0} },
     { MODKEY|ShiftMask,         XK_l,           spawn,          {.v = lockcmd} },
-    { MODKEY,                   XK_Insert,      spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn TempleOS:pixelsize=12 -i -l 50 | cut -d' ' -f1)") },
+    { MODKEY,                   XK_Insert,      spawn,           SHCMD("xdotool type $(grep -v '^#' ~/.suckless/bookmarks | dmenu -fn 'Modern DOS 8x16:pixelsize=23' -i -l 50 | cut -d' ' -f1)")  },
     /* Audio & Brightness */
     { 0,    XF86XK_AudioRaiseVolume,  spawn,          {.v = volup } },
     { 0,    XF86XK_AudioLowerVolume,  spawn,          {.v = voldown } },

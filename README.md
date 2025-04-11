@@ -6,3 +6,5 @@ Setup
 * Window manager: dwm
 * Shell: bash
 
+move font to `~/.local/share/fonts`
+

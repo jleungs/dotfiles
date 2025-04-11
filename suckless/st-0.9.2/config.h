@@ -5,9 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-//static char *font = "Terminus:pixelsize=11:antialias=true:autohint=true";
-//static char *font = "TempleOS:pixelsize=11:antialias=true:autohint=true";
-static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+//static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Modern DOS 9x16:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 1;
 
 /*
