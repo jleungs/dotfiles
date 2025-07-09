@@ -11,8 +11,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Modern DOS 8x16:pixelsize=23:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Modern DOS 8x16:pixelsize=23:antialias=true:autohint=true";
+static const char *fonts[]          = { "Spleen 8x16:style=Medium:pixelsize=23" };
+static const char dmenufont[]       = "Spleen 8x16:style=Medium:pixelsize=23";
 static const char col_gray1[]       = "#1c1c1c";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -33,14 +33,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance     title       tags mask      isfloating  monitor */
-    { "st-256color",     NULL,       NULL,       1 << 0,        0,          0 },
-    { "LibreWolf",       NULL,       NULL,       1 << 1,        0,          0 },
+    { "st-256color",      NULL,       NULL,       1 << 0,        0,          0 },
+    { "Chromium-browser", NULL,       NULL,       1 << 1,        0,          0 },
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {

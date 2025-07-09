@@ -5,8 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-//static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
-static char *font = "Modern DOS 8x16:pixelsize=21:antialias=true:autohint=true";
+static char *font = "Spleen 8x16:style=Medium:pixelsize=21";
 static int borderpx = 1;
 
 /*
