@@ -14,10 +14,11 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 10
 vim.opt.spelllang = { 'en_gb' }
 vim.opt.ignorecase = true
-vim.opt.clipboard = "unnamedplus"
 -- Remaps
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true })
+vim.keymap.set('n', '<leader>Y', '"+Y', { noremap = true })
 -- Toggle 'colorcolumn' at column 80
 vim.keymap.set('n', '<leader>c', function()
     if vim.wo.colorcolumn == '' then
