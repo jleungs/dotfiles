@@ -1,6 +1,7 @@
 let mapleader = " "
 syntax off
 set background=dark
+set ignorecase
 " get line number on cursor, rest relative
 set relativenumber
 set number
