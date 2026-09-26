@@ -35,8 +35,6 @@ augroup END
 " toggle spellcheck
 set spelllang=en_gb
 nnoremap <leader>s :set spell!<CR>
-" tag jumping with ctags
-command! MakeTags !ctags -R .
 " recursive file search
 set path+=**
 set wildmenu
